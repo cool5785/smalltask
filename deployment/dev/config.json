@@ -1,0 +1,31 @@
+{
+	"stackParams": {
+		"functionName": "batch-violation-maptask-creator",
+		"functionDescription": "Violation MapTask Creator",
+		"functionHandler": "lambda.handler",
+		"functionRuntime": "nodejs12.x",
+		"functionMemorySize": 256,
+		"hereLiveMapSnsArn": "arn:aws:sns:us-east-1:326935872127:here-livemap-e2e-feature",
+		"withDLQ": false,
+		"functionTimeout": 30,
+		"AccountBucketPrefix": "cm-transition-rd"
+	},
+	"lambdaParams": {
+		"functionCode": "deployment.zip",
+		"functionVersion": "SNAPSHOT",
+		"environmentVariables": {
+			"env": "dev"
+		}
+	},
+	"tags": {
+		"Name": "batch-violation-maptask-creator",
+		"Project": "batch-violation-maptask-creator",
+		"Environment": "DEV",
+		"Owner": "suryaprakash.gupta@here.com",
+		"odin_app_id": "1958",
+		"Team": "CME_CM_MC_PRODUCTION"
+	},
+	"pipelineParams": {
+		"allowChangePersistentResources": false
+	}
+}

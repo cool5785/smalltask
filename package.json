@@ -1,0 +1,54 @@
+{
+	"name": "@mapcreator/batch-violation-maptask-creator",
+	"description": "MapTask Creator from SNS",
+	"version": "0.0.1",
+	"repository": {
+		"type": "git",
+		"url": "https://hth.in.here.com/HERE/projects/mapcreator/repositories/mapcreator/"
+	},
+	"maintainers": [
+		{
+			"name": "Suryaprakash Gupta",
+			"email": "suryaprakash.gupta@here.com"
+		}
+	],
+	"private": true,
+	"license": "LicenseRef-Proprietary-HERE",
+	"scripts": {
+		"build": "npm run compile && npm run package",
+		"compile": "tsc -noEmit false",
+		"test": "mocha dist/app.spec",
+		"validate": "cd ../../ && tsc -p packages/batch-violation-maptask-creator -noEmit",
+		"tsc-watch": "cd ../../ && tsc -p packages/batch-violation-maptask-creator -noEmit -w --preserveWatchOutput",
+		"watch": "tsc -noEmit false -w --preserveWatchOutput",
+		"tslint": "tslint  --config ../../tslint.json --project tsconfig.json",
+		"package": "npm run zip_node_modules && npm run zip_src_js && npm run zip_lambda",
+		"zip_node_modules": "rm -f deployment.zip && zip -r deployment.zip node_modules",
+		"zip_src_js": "zip -r deployment.zip dist/",
+		"zip_lambda": "zip -r deployment.zip lambda.js"
+	},
+	"dependencies": {
+		"@mapcreator/lib-core": "0.1.0",
+		"axios": "0.18.0",
+		"lodash": "^4.17.15",
+		"md5": "^2.2.1",
+		"pg": "8.2.1",
+		"uuid": "^3.3.2",
+		"zlib": "^1.0.5"
+	},
+	"devDependencies": {
+		"@types/pg": "^7.14.3",
+		"@types/geojson": "^7946.0.7",
+		"@types/md5": "^2.1.33",
+		"@types/uuid": "^3.4.4",
+		"@types/aws-lambda": "0.0.31",
+		"@types/chai": "4.1.7",
+		"@types/chai-as-promised": "7.1.0",
+		"chai": "4.2.0",
+		"chai-as-promised": "7.1.1",
+		"mocha": "3.5.3",
+		"nodemon": "1.18.9",
+		"npm-run-all": "4.1.5",
+		"ts-node": "3.3.0"
+	}
+}
