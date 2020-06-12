@@ -29,7 +29,7 @@
 	},
 	"dependencies": {
 		"@mapcreator/lib-core": "0.1.0",
-		"axios": "0.18.0",
+		"axios": "0.19.2",
 		"lodash": "^4.17.15",
 		"md5": "^2.2.1",
 		"pg": "8.2.1",
